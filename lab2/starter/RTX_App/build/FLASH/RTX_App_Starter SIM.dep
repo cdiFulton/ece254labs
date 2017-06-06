@@ -1,0 +1,16 @@
+Dependencies for Project 'RTX_App', Target 'Starter SIM': (DO NOT MODIFY !)
+F (.\src\startup_LPC17xx.s)(0x591D980D)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Software\Keil_v5\ARM\RV31\INC-I C:\Software\Keil_v5\ARM\CMSIS\Include-I C:\Software\Keil_v5\ARM\Inc\NXP\LPC17xx--pd "__UVISION_VERSION SETA 516"--list .\build\flash\lst\startup_lpc17xx.lst --xref -o .\build\flash\startup_lpc17xx.o --depend .\build\flash\startup_lpc17xx.d)
+F (.\src\RTX_Conf_CM.c)(0x591D980D)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Software\Keil_v5\ARM\RV31\INC-I C:\Software\Keil_v5\ARM\CMSIS\Include-I C:\Software\Keil_v5\ARM\Inc\NXP\LPC17xx-D__UVISION_VERSION="516"-o .\build\flash\rtx_conf_cm.o --omf_browse .\build\flash\rtx_conf_cm.crf --depend .\build\flash\rtx_conf_cm.d)
+I (src\../../RTX_CM3/INC/RTL.h)(0x591D980D)
+F (.\src\Retarget.c)(0x591D980D)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Software\Keil_v5\ARM\RV31\INC-I C:\Software\Keil_v5\ARM\CMSIS\Include-I C:\Software\Keil_v5\ARM\Inc\NXP\LPC17xx-D__UVISION_VERSION="516"-o .\build\flash\retarget.o --omf_browse .\build\flash\retarget.crf --depend .\build\flash\retarget.d)
+I (C:\Software\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AFACC2)
+I (C:\Software\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x55AFACC2)
+I (C:\Software\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AFACC2)
+I (C:\Software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFACC2)
+I (src\uart_polling.h)(0x591D980D)
+F (.\src\system_LPC17xx.c)(0x591D980D)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Software\Keil_v5\ARM\RV31\INC-I C:\Software\Keil_v5\ARM\CMSIS\Include-I C:\Software\Keil_v5\ARM\Inc\NXP\LPC17xx-D__UVISION_VERSION="516"-o .\build\flash\system_lpc17xx.o --omf_browse .\build\flash\system_lpc17xx.crf --depend .\build\flash\system_lpc17xx.d)
+I (C:\Software\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AFACC2)
+F (.\src\uart_polling.c)(0x591D980D)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Software\Keil_v5\ARM\RV31\INC-I C:\Software\Keil_v5\ARM\CMSIS\Include-I C:\Software\Keil_v5\ARM\Inc\NXP\LPC17xx-D__UVISION_VERSION="516"-o .\build\flash\uart_polling.o --omf_browse .\build\flash\uart_polling.crf --depend .\build\flash\uart_polling.d)
+F (.\src\main_task_exp.c)(0x591D980D)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I C:\Software\Keil_v5\ARM\RV31\INC-I C:\Software\Keil_v5\ARM\CMSIS\Include-I C:\Software\Keil_v5\ARM\Inc\NXP\LPC17xx-D__UVISION_VERSION="516"-o .\build\flash\main_task_exp.o --omf_browse .\build\flash\main_task_exp.crf --depend .\build\flash\main_task_exp.d)
+F (..\RTX_CM3\CM3_LE\RTX_CM3.lib)(0x591DA6E4)()
+F (.\Test_spec.txt)(0x591D980D)()

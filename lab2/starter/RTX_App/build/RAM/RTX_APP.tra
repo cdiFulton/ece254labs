@@ -1,0 +1,26 @@
+*** Creating Trace Output File '.\build\RAM\RTX_APP.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\build\ram\startup_lpc17xx.o"'
+### List of Objects: adding '".\build\ram\rtx_conf_cm.o"'
+### List of Objects: adding '".\build\ram\retarget.o"'
+### List of Objects: adding '".\build\ram\system_lpc17xx.o"'
+### List of Objects: adding '".\build\ram\uart_polling.o"'
+### List of Objects: adding '".\build\ram\main_task_exp.o"'
+### List of Objects: adding '"..\RTX_CM3\CM3_LE\RTX_CM3.lib"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\build\ram\startup_lpc17xx.o" ".\build\ram\rtx_conf_cm.o" ".\build\ram\retarget.o" ".\build\ram\system_lpc17xx.o" ".\build\ram\uart_polling.o" ".\build\ram\main_task_exp.o" N:\2B\ECE254-master\lab2\starter\RTX_CM3\CM3_LE\RTX_CM3.lib 
+--strict --scatter ".\build\RAM\RTX_APP.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\build\FLASH\lst\RTX_APP.map" -o .\build\RAM\RTX_APP.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\build\RAM\RTX_APP.axf'
+### ADS-LD Command File: '.\build\RAM\RTX_APP.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\build\RAM\RTX_APP.lnp', Handle=0x00000854
+### Writing '.lnp' file
+### ADS-LD Command file '.\build\RAM\RTX_APP.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork --split_sections 
+-I c:\Software\Keil\ARM\RV31\INC 
+-I c:\Software\Keil\ARM\CMSIS\Include 
+-I c:\Software\Keil\ARM\Inc\NXP\LPC17xx 
+-DDBG_MSG -o "..\RTX_App\build\FLASH\rt_membox.o" --omf_browse "..\RTX_App\build\FLASH\rt_membox.crf" --depend "..\RTX_App\build\FLASH\rt_membox.d" "SRC\CM\rt_MemBox.c"

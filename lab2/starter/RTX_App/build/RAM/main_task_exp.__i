@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork 
+-I c:\Software\Keil\ARM\RV31\INC 
+-I c:\Software\Keil\ARM\CMSIS\Include 
+-I c:\Software\Keil\ARM\Inc\NXP\LPC17xx 
+-o ".\build\RAM\main_task_exp.o" --omf_browse ".\build\RAM\main_task_exp.crf" --depend ".\build\RAM\main_task_exp.d" "src\main_task_exp.c"

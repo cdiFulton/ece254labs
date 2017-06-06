@@ -1,0 +1,13 @@
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_System.c
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_TypeDef.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\RTX_Config.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_Task.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_System.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_Event.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_List.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_Mailbox.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_Semaphore.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_Time.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_Timer.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_Robin.h
+..\RTX_App\build\RAM\rt_system.o: SRC\CM\rt_HAL_CM.h

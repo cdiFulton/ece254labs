@@ -1,0 +1,51 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.16a
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Eric Praetzel, ECE Dept, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.16a
+Toolchain Path:  C:\Software\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 (build 20)
+Assembler:       Armasm.exe V5.06 (build 20)
+Linker/Locator:  ArmLink.exe V5.06 (build 20)
+Library Manager: ArmAr.exe V5.06 (build 20)
+Hex Converter:   FromElf.exe V5.06 (build 20)
+CPU DLL:         SARMCM3.DLL V5.16a
+Dialog DLL:      DARMP1.DLL V1.25.0.0
+Target DLL:      UL2CM3.DLL V1.155.12.0
+Dialog DLL:      TARMP1.DLL V1.24.0.0
+ 
+<h2>Project:</h2>
+N:\2B\ece254labs\lab2\starter\RTX_App\RTX_App.uvproj
+Project File Date:  05/18/2017
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 (build 20)', folder: 'C:\Software\Keil_v5\ARM\ARMCC\Bin'
+Build Project 'RTX_App' - Target 'Starter SIM'
+compiling system_LPC17xx.c...
+N:\2B\ece254labs\lab2\starter\RTX_App\src\system_LPC17xx.c(25): error:  #5: cannot open source input file "LPC17xx.h": No such file or directory
+  #include "LPC17xx.h"
+src\system_LPC17xx.c: 0 warnings, 1 error
+compiling RTX_Conf_CM.c...
+N:\2B\ece254labs\lab2\starter\RTX_App\src\RTX_Conf_CM.c(177): error:  #5: cannot open source input file "RTX_lib.c": No such file or directory
+  #include <RTX_lib.c>
+src\RTX_Conf_CM.c: 0 warnings, 1 error
+compiling uart_polling.c...
+N:\2B\ece254labs\lab2\starter\RTX_App\src\uart_polling.c(8): error:  #5: cannot open source input file "LPC17xx.h": No such file or directory
+  #include <LPC17xx.h>
+src\uart_polling.c: 0 warnings, 1 error
+compiling main_task_exp.c...
+N:\2B\ece254labs\lab2\starter\RTX_App\src\main_task_exp.c(8): error:  #5: cannot open source input file "LPC17xx.h": No such file or directory
+  #include <LPC17xx.h>
+src\main_task_exp.c: 0 warnings, 1 error
+".\build\FLASH\RTX_APP.axf" - 4 Error(s), 0 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>

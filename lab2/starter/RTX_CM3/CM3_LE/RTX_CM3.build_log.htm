@@ -1,0 +1,169 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.16a
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Eric Praetzel, ECE Dept, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.16a
+Toolchain Path:  C:\Software\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 (build 20)
+Assembler:       Armasm.exe V5.06 (build 20)
+Linker/Locator:  ArmLink.exe V5.06 (build 20)
+Library Manager: ArmAr.exe V5.06 (build 20)
+Hex Converter:   FromElf.exe V5.06 (build 20)
+CPU DLL:         SARMCM3.DLL V5.16a
+Dialog DLL:      DCM.DLL V1.13.2.0
+Target DLL:      UL2CM3.DLL V1.155.12.0
+Dialog DLL:      TCM.DLL V1.14.5.0
+ 
+<h2>Project:</h2>
+N:\2B\ece254labs\lab2\starter\RTX_CM3\RTX_Lib_CM.uvproj
+Project File Date:  05/18/2017
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 (build 20)', folder: 'C:\Software\Keil_v5\ARM\ARMCC\Bin'
+*** Note: Rebuilding project, since 'Options->Output->Create Batch File' is selected.
+Rebuild Project 'RTX_Lib_CM' - Target 'CM3_LE'
+compiling rt_Task.c...
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(87): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(90): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(92): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(94): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+SRC\CM\rt_Task.c: 4 warnings, 0 errors
+compiling rt_System.c...
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(87): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(90): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(92): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(94): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_System.c(202): warning:  #3731-D: intrinsic is deprecated
+      
+t_dec (&os_psq->count);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_System.c(202): warning:  #3731-D: intrinsic is deprecated
+      
+t_dec (&os_psq->count);
+SRC\CM\rt_System.c: 6 warnings, 0 errors
+compiling rt_Event.c...
+compiling rt_List.c...
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(87): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(90): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(92): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(94): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+SRC\CM\rt_List.c: 4 warnings, 0 errors
+compiling rt_Mailbox.c...
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(87): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(90): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(92): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(94): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_Mailbox.c(85): warning:  #3731-D: intrinsic is deprecated
+      
+t_inc (&p_MCB->count);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_Mailbox.c(85): warning:  #3731-D: intrinsic is deprecated
+      
+t_inc (&p_MCB->count);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_Mailbox.c(121): warning:  #3731-D: intrinsic is deprecated
+        
+t_dec (&p_MCB->count);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_Mailbox.c(121): warning:  #3731-D: intrinsic is deprecated
+        
+t_dec (&p_MCB->count);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_Mailbox.c(181): warning:  #3731-D: intrinsic is deprecated
+      
+t_dec (&p_MCB->count);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_Mailbox.c(181): warning:  #3731-D: intrinsic is deprecated
+      
+t_dec (&p_MCB->count);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_Mailbox.c(205): warning:  #3731-D: intrinsic is deprecated
+      
+t_inc (&p_CB->count);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_Mailbox.c(205): warning:  #3731-D: intrinsic is deprecated
+      
+t_inc (&p_CB->count);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_Mailbox.c(224): warning:  #3731-D: intrinsic is deprecated
+        
+t_inc (&p_CB->count);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_Mailbox.c(224): warning:  #3731-D: intrinsic is deprecated
+        
+t_inc (&p_CB->count);
+SRC\CM\rt_Mailbox.c: 14 warnings, 0 errors
+compiling rt_Semaphore.c...
+compiling rt_Time.c...
+compiling rt_Timer.c...
+compiling rt_Mutex.c...
+compiling rt_Robin.c...
+compiling rt_MemBox.c...
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(87): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(90): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(92): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(94): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_MemBox.c(85): warning:  #3731-D: intrinsic is deprecated
+      if ((free = (void **)__ldrex(&((P_BM) box_mem)->free)) == 0) {
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_MemBox.c(89): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex((U32)*free, &((P_BM) box_mem)->free));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_MemBox.c(134): warning:  #3731-D: intrinsic is deprecated
+      *((void **)box) = (void *)__ldrex(&((P_BM) box_mem)->free);
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_MemBox.c(135): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex ((U32)box, &((P_BM) box_mem)->free));
+SRC\CM\rt_MemBox.c: 8 warnings, 0 errors
+compiling rt_Task_ext.c...
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(87): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(90): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(92): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(94): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+SRC\CM\rt_Task_ext.c: 4 warnings, 0 errors
+compiling rt_MemBox_ext.c...
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(87): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(90): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(92): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(94): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+SRC\CM\rt_MemBox_ext.c: 4 warnings, 0 errors
+assembling SVC_Table.s...
+compiling HAL_CM3.c...
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(87): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(90): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1, count));
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(92): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1;
+N:\2B\ece254labs\lab2\starter\RTX_CM3\SRC\CM\rt_HAL_CM.h(94): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+SRC\CM\HAL_CM3.c: 4 warnings, 0 errors
+creating Library...
+After Build - User command #1: cmd.exe /C copy ArInp.Scr CM3_LE\BuildLib.scr
+        1 file(s) copied.
+".\CM3_LE\RTX_CM3.lib" - 0 Error(s), 48 Warning(s).
+Build Time Elapsed:  00:00:14
+</pre>
+</body>
+</html>
