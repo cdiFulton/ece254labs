@@ -1,0 +1,21 @@
+1. n-1
+2. This variable contains a reference to the tasks in the “ready” state
+This variable contains the eventual return value of the process
+Tsk_stack is the address of the current top of the stack, stack is a pointer to the bottom of the stack
+Yes. Both structs contain the same variable with the same type. 
+3. Mp_tcb is the allocated memory pool for the task control block, and mp_stk is the allocated memory space for the stack
+4. R1-R12, LR, PSR, PC
+os_stackinfo
+Add the size of the stack to the pointer to the top of the stack
+P_TCB->tsk_stack
+rt_get_PSP()
+5. _declare_box(mympool,12,20)
+_init_box(mympool,sizeof(mympool),12)
+rt_alloc_box
+rt_free _box
+6. Inserts the given task into the given priority list using its assigned priority
+Gets the task at the front of the given priority list
+7. Blocks the current task and gets the next task from os_rdy
+Dispatches the identified task or dispatches the task with the highest priority if no task is specified
+8. Os_mbx_wait does not define the return value because the return value is determined when the message is sent, not received (or waited for)
+9. Priority Queue

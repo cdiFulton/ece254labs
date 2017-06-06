@@ -1,0 +1,1 @@
+Open Keil µVision 4. Select open project, navigate to the "starter" directory, and open the keil_proc multi-project workspace. Batch build the project, then start a debug session to run the project. If necessary, ensure that the target and debug settings are correct according to lab manual section 1.4.1.
