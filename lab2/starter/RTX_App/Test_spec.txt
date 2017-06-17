@@ -1,1 +1,17 @@
-Write test task specification in this file.
+//// Part A
+The rt_get_task function is tested via the printing task in Part B.  
+
+//// Part B
+Description of Tasks:
+print_task: This task uses the prints the name, ID, priority, status, and stack usage of each currently running task. This task runs continuously, with an os_dly_wait of 30 between each printing. 
+
+alloc_task: This task uses our memory allocation rt function to attempt to allocate a number of memory blocks equal to the number of blocks in our memory pool + 2. 
+
+free_task: This task uses our memory freeing rt function to free a number of memory blocks equal to the number of blocks in our memory pool + 2. This task uses an os_dly_wait of 10 between each freeing.
+
+Description of Testing:
+Our test consists of running print_task to continuously receive updates on the status of our tasks, running two instances of alloc_task with different priorities, and running free_task. 
+
+Outcome of Testing: 
+Success. 
+The first instance of alloc_task to run allocates one block of memory and then is blocked. The second instance is immediately blocked. print_task confirms that they are blocked with status WAIT_MEM. Each time memory is freed by free_task, the instance of alloc_task with higher priority is unblocked, until it has completed its predetermined number of cycles. Then, the instance with lower priority is unblocked and allowed to allocate memory. 
