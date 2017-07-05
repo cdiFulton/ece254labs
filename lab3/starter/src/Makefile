@@ -1,0 +1,11 @@
+
+all: produce run
+
+produce: threads.c helpers.c
+	gcc -lpthread -lm -g -o produce threads.c helpers.c
+	
+run: produce
+	./produce 1 1 1 1
+
+# threads
+# messages

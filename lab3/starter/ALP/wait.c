@@ -3,8 +3,6 @@
 #include <sys/wait.h>
 #include <spawn.h>
 
-
-
 int main ()
 {
 	int child_status;
