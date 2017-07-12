@@ -9,6 +9,7 @@
 #include <stdio.h> 
 #include <stdlib.h> 
 #include "mem.h"
+#include "helpers.c"
 
 /* defines */
 
@@ -39,7 +40,16 @@ int worst_fit_memory_init(size_t size)
 /* memory allocators */
 void *best_fit_alloc(size_t size)
 {
-	// To be completed by students
+	struct mem_ll_head* ll_h;
+	// Since we have the head as a seperate element that keeps track of the total size,
+	// we can just check that first
+	// Also check to make sure we actually have a first element
+	if ( ll_h->tot_size < size || ll_h->first == 0 ) {
+		return 0;
+	}
+	// There isn't a clear lack of space, so we'll go through the list
+	ll_find_min_block( ll_h->first, size );
+	
 	return NULL;
 }
 
