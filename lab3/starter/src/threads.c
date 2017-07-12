@@ -27,7 +27,7 @@ struct for_consumer {
 	int* buffer;		// Pointer to the buffer
 };
 
-
+// gcc -g -lpthread -lm -lrt -o produce threads.c helpers.c
 
 /* 	A producer thread. Produces numbers and places them in a buffer.
 	Parameters: 
@@ -94,10 +94,9 @@ void* consumer( void* data_in )
 		consumed = (double) pop( cons_params->buffer );
 		sem_post( BUFFER_MUTEX );
 		if( consumed != -1 ) {
-			printf("popped value: %d \n", consumed);
 			root = sqrt( consumed );
 			if( round( root ) == root ) {
-				printf("%d %d %d\n", cons_params->cons_ID, consumed, root);
+				printf("%d %d %d \n", cons_params->cons_ID, (int)consumed, (int)root);
 			}
 		}
 	}
@@ -108,7 +107,7 @@ void* consumer( void* data_in )
 int main(int argc, char *argv[])
 {
 	int n, b, p, c, i, j, error_code;
-	float start_time, end_time;
+	double start_time, end_time;
 	struct timeval tv;
 	int* buffer;
 	struct for_producer* data_prod;

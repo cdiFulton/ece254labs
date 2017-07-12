@@ -1,0 +1,12 @@
+To build the "messages.c" program, which implements processes with the message queue, enter the command 
+
+gcc -g -lpthread -lm -lrt -o x messages.c helpers.c
+
+on a linux command line with gcc installed, where "x" is the desired executable name. 
+
+
+To build the "threads.c" program, which implements threads with shared memory, enter the command 
+
+gcc -g -lpthread -lm -lrt -o x threads.c helpers.c
+
+on a linux command line with gcc installed, where "x" is the desired executable name. 

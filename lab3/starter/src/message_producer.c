@@ -23,14 +23,23 @@ struct for_consumer {
 	mqd_t mq;			// Pointer to the mqueue
 };
 
-int main ( char* data_in ) 
+int main ( int argc, char *argv[] ) 
 {
+	printf("checkprod"); fflush(stdout);
 	struct for_producer* prod_params;
 	// The number that will be produced
 	int produced;
 	unsigned prio = 1;
 	
-	prod_params = (struct for_producer*)data_in;
+	if( argc < 5 ) {
+		return -1;
+	}
+	printf("%s %s %s %s", argv[1], argv[2], argv[3], argv[4]);
+	prod_params->num_to_prod = atoi( argv[1] );
+	prod_params->prod_ID = atoi( argv[2] );
+	prod_params->num_prod = atoi( argv[3] );
+	prod_params->mq = (mqd_t)atoi( argv[4] );
+	
 	produced = prod_params->prod_ID;
 	
 	printf("Initialized producer %d\n", prod_params->prod_ID);

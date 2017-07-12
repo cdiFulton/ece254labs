@@ -23,7 +23,7 @@ struct for_consumer {
 	mqd_t mq;			// Pointer to the mqueue
 };
 
-int main( char* data_in ) 
+int main( int argc, char *argv[] ) 
 {
 	struct for_consumer* cons_params;
 	int* receive_buffer;
@@ -31,8 +31,13 @@ int main( char* data_in )
 	double consumed = -1;
 	double root;
 	
-	cons_params = (struct for_consumer*)data_in;
-
+	if( argc < 5 ) {
+		return -1;
+	}
+	
+	cons_params->cons_ID = atoi( argv[2] );
+	cons_params->mq = (mqd_t)atoi( argv[4] );
+	
 	printf("Initialized consumer %d\n", cons_params->cons_ID);
 	
 	while( !(production_done && consumed == -1) ) {
