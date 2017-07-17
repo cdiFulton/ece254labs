@@ -7,6 +7,7 @@
 /* includes */
 /* system provided header files. You may add more */
 #include <stdio.h>
+#include <stdlib.h>
 
 /* non-system provided header files. 
    Do not include more user-defined header files here
@@ -17,27 +18,62 @@
 
 int main(int argc, char *argv[])
 {
+	int best_fit_ext;
+	int worst_fit_ext;
+	int random;
+	int pool_size = 2048;
+	int num_iterations = 500;
+	int i, j;
+	int index = 0;
+	void* best_mem[5000];
+	void* worst_mem[5000];
+	
+	printf("check 1\n"); fflush(stdout);
+	best_fit_memory_init(pool_size);		// initialize 1KB, best fit
+	printf("check 3\n"); fflush(stdout);
 
-	int num = 0;
-	void *p, *q;
-
-	best_fit_memory_init(1024);	// initizae 1KB, best fit
-
-	p = best_fit_alloc(8);		// allocate 8B
-	printf("p=%p\n", p);
-	if ( p != NULL ) {
-		best_fit_dealloc(p);	
+	// To test, run through a large number of times allocating then deallocating random
+	// numbers of blocks of random size
+	for(i = 0; i < num_iterations; i++) {
+		random = rand()%5 + 2;
+		for(j = 0; j < random; j++) {
+			printf("allocate i: %d, random: %d\n", i, random); fflush(stdout);
+			best_mem[index] = best_fit_alloc(rand()%pool_size);
+			index++;
+		}
+		
+		random = rand()%5;
+		for(j = 0; j < random; j++) {
+			printf("deallocate i: %d, random: %d\n", i, random); fflush(stdout);
+			best_fit_dealloc(best_mem[rand()%index]);
+		}
 	}
-	num = best_fit_count_extfrag(4);
+	
+	best_fit_ext = best_fit_count_extfrag(pool_size);
 
-	worst_fit_memory_init(1024);	// initizae 1KB, worst fit
+	
+	printf("check 1\n"); fflush(stdout);
+	worst_fit_memory_init(pool_size);		// initialize 1KB, worst fit
+	printf("check 3\n"); fflush(stdout);
 
-	q = worst_fit_alloc(8);		// allocate 8B
-	printf("q=%p\n", q);
-	if ( q != NULL ) {
-		worst_fit_dealloc(q);	
+	for(i = 0; i < num_iterations; i++) {
+		random = rand()%5 + 2;
+		for(j = 0; j < random; j++) {
+			printf("allocate i: %d, random: %d\n", i, random); fflush(stdout);
+			worst_mem[index] = worst_fit_alloc(rand()%pool_size);
+			index++;
+		}
+		
+		random = rand()%5;
+		for(j = 0; j < random; j++) {
+			printf("deallocate i: %d, random: %d\n", i, random); fflush(stdout);
+			worst_fit_dealloc(worst_mem[rand()%index]);
+		}
 	}
-	num = worst_fit_count_extfrag(4);
+	
+	worst_fit_ext = worst_fit_count_extfrag(pool_size);
+	printf("Best fit external fragmentation count: %d\n", best_fit_ext);
+	printf("Worst fit external fragmentation count: %d\n", worst_fit_ext);
 
 	return 0;
 }
