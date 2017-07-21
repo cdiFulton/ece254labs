@@ -13,16 +13,16 @@ struct mem_ll {
 */
 struct mem_ll* ll_find_min_block ( struct mem_ll* ll, size_t size ) {
 	struct mem_ll* current = ll;
-	struct mem_ll* min = malloc(sizeof(struct mem_ll));
-	min->size = 0;
-	while (current->next != 0) {
+	struct mem_ll* min = current;
+
+	while (current->next) {
+		current = current->next;
 		if(current->size >= size && current->size <= min->size && !current->is_allocated) {
 			min = current;
 		}
-		current = current->next;
 	}
 	
-	if(min->size) {
+	if(min->size >= size) {
 		return min;
 	}
 	
@@ -34,16 +34,16 @@ struct mem_ll* ll_find_min_block ( struct mem_ll* ll, size_t size ) {
 */
 struct mem_ll* ll_find_max_block ( struct mem_ll* ll, size_t size ) {
 	struct mem_ll* current = ll;
-	struct mem_ll* max = malloc(sizeof(struct mem_ll));
-	max->size = 0;
+	struct mem_ll* max = current;
+
 	while (current->next != 0) {
+		current = current->next;
 		if(current->size >= size && current->size >= max->size && !current->is_allocated) {
 			max = current;
 		}
-		current = current->next;
 	}
 	
-	if(max->size) {
+	if(max->size >= size) {
 		return max;
 	}
 	

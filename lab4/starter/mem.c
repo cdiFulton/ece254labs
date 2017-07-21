@@ -12,7 +12,7 @@
 #include "helpers.c"
 
 /* defines */
-#define ll_struct_size sizeof(struct mem_ll*) + sizeof(struct mem_ll*) + sizeof(size_t) + sizeof(void*) + sizeof(int)
+
 
 /* global varaiables */
 void* memory_best;
@@ -20,6 +20,8 @@ void* memory_worst;
 
 struct mem_ll* ll_best;
 struct mem_ll* ll_worst;
+
+const int ll_struct_size = sizeof(struct mem_ll*) + sizeof(struct mem_ll*) + sizeof(size_t) + sizeof(void*) + sizeof(int);
 
 /* Functions */
 
@@ -83,7 +85,7 @@ int worst_fit_memory_init(size_t size)
 /* memory allocators */
 void *best_fit_alloc(size_t size)
 {
-	struct mem_ll* temp_old = malloc(sizeof(struct mem_ll));
+	struct mem_ll* temp_old;
 	struct mem_ll* temp_new = malloc(sizeof(struct mem_ll));
 	
 	if(size%4) { 
@@ -97,6 +99,7 @@ void *best_fit_alloc(size_t size)
 	if(temp_old == 0) {
 		return NULL;
 	}
+	printf("best: found element of size %d at %d\n", temp_old->size, (int)temp_old->space); fflush(stdout); 
 	
 	// Break the found memory block into two blocks: the original found block
 	// will now be allocated and of the specified size, and the remaining space will 
@@ -120,7 +123,7 @@ void *best_fit_alloc(size_t size)
 
 void *worst_fit_alloc(size_t size)
 {
-	struct mem_ll* temp_old = malloc(sizeof(struct mem_ll));
+	struct mem_ll* temp_old;
 	struct mem_ll* temp_new = malloc(sizeof(struct mem_ll));
 	
 	if(size%4) { 
@@ -133,6 +136,7 @@ void *worst_fit_alloc(size_t size)
 	if(temp_old == 0) {
 		return NULL;
 	}
+	printf("worst: found element of size %d at %d\n", temp_old->size, (int)temp_old->space); fflush(stdout); 
 	
 	// Break the found memory block into two blocks: the original found block
 	// will now be allocated and of the specified size, and the remaining space will 
@@ -158,6 +162,10 @@ void best_fit_dealloc(void *ptr)
 {
 	struct mem_ll* temp;
 	
+	if(!ptr) {
+		return;
+	}
+
 	// Find the allocated memory location
 	temp = ll_find_ptr(ll_best, ptr);
 	
@@ -166,19 +174,17 @@ void best_fit_dealloc(void *ptr)
 		return;
 	}
 	
-	printf("check 2\n"); fflush(stdout);
+	printf("best: deallocating element\n"); fflush(stdout);
+	
 	// We found the location, now coalesce: 
 	// Check if the next ll element is unallocated
 	if(temp->next) {
-		printf("check 3\n"); fflush(stdout);
 		// If the next element is unallocated, absorb into this one
 		if(!temp->next->is_allocated) {
-			printf("check 4\n"); fflush(stdout);
 			temp->size += temp->next->size + ll_struct_size;
 			temp->next = temp->next->next;
 		}
 	}
-	printf("check 3\n"); fflush(stdout);
 	
 	// Recursively move back and try to coalesce previous elements
 	while(temp->prev) {
@@ -188,7 +194,6 @@ void best_fit_dealloc(void *ptr)
 			temp->next = temp->next->next;
 		}
 	}
-	printf("check 4\n"); fflush(stdout);
 	return;
 }
 
@@ -196,6 +201,9 @@ void worst_fit_dealloc(void *ptr)
 {
 	struct mem_ll* temp;
 	
+	if(!ptr) {
+		return;
+	}
 	// Find the allocated memory location
 	temp = ll_find_ptr(ll_worst, ptr);
 	
@@ -203,10 +211,12 @@ void worst_fit_dealloc(void *ptr)
 	if(!temp) {
 		return;
 	}
+	printf("worst: deallocating element\n"); fflush(stdout);
 	
 	// We found the location, now coalesce: 
 	// Check if the next ll element is unallocated
 	if(temp->next) {
+		
 		// If the next element is unallocated, absorb into this one
 		if(!temp->next->is_allocated) {
 			temp->size += temp->next->size + ll_struct_size;
@@ -234,6 +244,7 @@ int best_fit_count_extfrag(size_t size)
 	int frag_count = 0;
 	
 	while (current->next) {
+		printf("checking next\n"); fflush(stdout);
 		if(current->size < size && !current->is_allocated) {
 			frag_count++;
 		}
